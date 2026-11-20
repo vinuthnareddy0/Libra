@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>LIBRA — Librarian Dashboard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <aside class="sidebar">
+    <a class="brand" href="#" aria-label="Libra home"><span class="brand-mark">Ⅲ</span><span>Libra</span></a>
+    <nav class="nav" aria-label="Main navigation">
+      <a class="nav-link active" href="#dashboard"><span class="nav-icon">▦</span>Dashboard</a>
+      <a class="nav-link" href="books.html"><span class="nav-icon">▤</span>Books</a>
+      <a class="nav-link" href="members.html"><span class="nav-icon">♧</span>Members</a>
+      <a class="nav-link" href="circulation.html"><span class="nav-icon">⇄</span>Circulation</a>
+      <a class="nav-link" href="settings.html"><span class="nav-icon">⚙</span>Settings</a>
+    </nav>
+    <div class="sidebar-bottom">
+      <section class="lending-card">
+        <h2>Lending desk</h2>
+        <p>Check a book out to a member in seconds.</p>
+        <button class="btn btn-orange btn-wide" id="openIssue"><span>＋</span> Issue a book</button>
+      </section>
+      <button class="profile" id="profileButton" aria-label="Librarian profile">
+        <span class="avatar avatar-dark">VK</span>
+        <span class="profile-copy"><strong>Vinuthna Kotha</strong><small>Librarian</small></span>
+        <span class="chevrons">⌃<br>⌄</span>
+      </button>
+    </div>
+  </aside>
+
+  <main class="main" id="dashboard">
+    <header class="topbar">
+      <label class="search">
+        <span class="search-icon">⌕</span>
+        <input id="globalSearch" type="search" placeholder="Search book name, author, ISBN..." autocomplete="off">
+      </label>
+      <button class="notification" id="notificationButton" aria-label="Notifications">♧<span class="notification-count">8</span></button>
+    </header>
+
+    <section class="top-grid">
+      <article class="welcome panel">
+        <p class="date-line" id="todayLabel">Wednesday, 18 November</p>
+        <h1>Good evening,<br>Vinuthna</h1>
+        <p class="welcome-copy" id="welcomeCopy">Nothing is due back today, and 6 are overdue. Time for a few gentle reminders.</p>
+        <div class="welcome-actions">
+          <button class="btn btn-dark" id="heroIssue">＋ &nbsp;Issue a book</button>
+          <button class="btn btn-light" id="viewOverdue">View overdue <span>↗</span></button>
+        </div>
+      </article>
+      <article class="featured panel">
+        <img class="featured-cover" src="https://covers.openlibrary.org/b/isbn/9780441172719-M.jpg" alt="Dune book cover" onerror="this.src='https://covers.openlibrary.org/b/title/Dune-M.jpg'">
+        <div class="featured-copy">
+          <span class="tag">Most borrowed</span>
+          <h2>Dune</h2>
+          <p class="muted">Frank Herbert</p>
+          <p class="description">On the desert planet Arrakis, young Paul Atreides becomes entangled in a struggle over the most valuable substance in the...</p>
+          <p class="loan-count"><strong>7</strong> loans all time</p>
+        </div>
+      </article>
+    </section>
+
+    <section class="stats-grid" aria-label="Library summary">
+      <article class="stat-card panel"><span class="stat-icon icon-ink">▤</span><div><small>Total books</small><strong id="totalBooks">65</strong><small>26 titles</small></div></article>
+      <article class="stat-card panel"><span class="stat-icon icon-orange">♧</span><div><small>On loan now</small><strong id="onLoan">18</strong><small>47 on shelves</small></div></article>
+      <article class="stat-card panel"><span class="stat-icon icon-red">⚠</span><div><small>Overdue</small><strong id="overdueCount">6</strong><small>Follow up</small></div></article>
+      <article class="stat-card panel"><span class="stat-icon icon-green">♙</span><div><small>Members</small><strong id="memberCount">14</strong><small>13 active</small></div></article>
+      <article class="stat-card panel"><span class="stat-icon icon-peach">₹</span><div><small>Unpaid fines</small><strong id="unpaidFines">₹40</strong><small>₹5/day late</small></div></article>
+    </section>
+
+    <section class="middle-grid">
+      <article class="panel chart-panel">
+        <div class="panel-heading"><h2>Borrowing trends</h2><span>Last 8 weeks</span></div>
+        <div class="chart" aria-label="Borrowing trends bar chart">
+          <div class="y-labels"><span>12</span><span>9</span><span>6</span><span>3</span><span>0</span></div>
+          <div class="chart-plot">
+            <div class="grid-lines"><i></i><i></i><i></i><i></i><i></i></div>
+            <div class="bar-groups">
+              <div class="bar-group"><i class="bar orange" style="height:30%"></i><i class="bar dark" style="height:40%"></i><small>28 Sep</small></div>
+              <div class="bar-group"><i class="bar orange" style="height:50%"></i><i class="bar dark" style="height:60%"></i><small>5 Oct</small></div>
+              <div class="bar-group"><i class="bar orange" style="height:30%"></i><i class="bar dark" style="height:50%"></i><small>12 Oct</small></div>
+              <div class="bar-group"><i class="bar orange" style="height:90%"></i><i class="bar dark" style="height:30%"></i><small>19 Oct</small></div>
+              <div class="bar-group"><i class="bar orange" style="height:40%"></i><i class="bar dark" style="height:30%"></i><small>26 Oct</small></div>
+              <div class="bar-group"><i class="bar orange" style="height:60%"></i><i class="bar dark" style="height:40%"></i><small>2 Nov</small></div>
+              <div class="bar-group"><i class="bar orange" style="height:50%"></i><i class="bar dark" style="height:20%"></i><small>9 Nov</small></div>
+              <div class="bar-group"><i class="bar orange" style="height:20%"></i><i class="bar dark" style="height:0%"></i><small>16 Nov</small></div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="panel calendar-panel">
+        <div class="panel-heading"><h2>Due back</h2><div class="calendar-arrows"><button id="prevWeek" aria-label="Previous week">‹</button><button id="nextWeek" aria-label="Next week">›</button></div></div>
+        <div class="week" id="weekStrip">
+          <button class="day"><small>Sun</small><strong>15</strong><i></i></button>
+          <button class="day"><small>Mon</small><strong>16</strong><i></i></button>
+          <button class="day"><small>Tue</small><strong>17</strong><i></i></button>
+          <button class="day selected"><small>Wed</small><strong>18</strong><i></i></button>
+          <button class="day"><small>Thu</small><strong>19</strong><i></i></button>
+          <button class="day"><small>Fri</small><strong>20</strong><i></i></button>
+          <button class="day"><small>Sat</small><strong>21</strong><i></i></button>
+        </div>
+        <p class="calendar-note" id="calendarNote">No returns due on 18 Nov.</p>
+      </article>
+    </section>
+
+    <section class="lower-grid">
+      <article class="panel categories-panel">
+        <h2>Book categories</h2>
+        <div class="category-bar" aria-label="Book category distribution">
+          <span style="width:24%;background:#f0641b"></span><span style="width:20%;background:#30241e"></span><span style="width:18%;background:#f3a36d"></span><span style="width:17%;background:#2c8a55"></span><span style="width:11%;background:#d99a20"></span><span style="width:6%;background:#f0641b"></span><span style="width:3%;background:#30241e"></span><span style="width:1%;background:#f3a36d"></span>
+        </div>
+        <div class="category-legend">
+          <div><i class="dot" style="background:#f0641b"></i><span>Fantasy<small>24% · 16 loans</small></span></div>
+          <div><i class="dot" style="background:#30241e"></i><span>Classics<small>20% · 13 loans</small></span></div>
+          <div><i class="dot" style="background:#f3a36d"></i><span>Sci-Fi<small>18% · 12 loans</small></span></div>
+          <div><i class="dot" style="background:#2c8a55"></i><span>Fiction<small>17% · 11 loans</small></span></div>
+          <div><i class="dot" style="background:#d99a20"></i><span>Non-Fiction<small>11% · 7 loans</small></span></div>
+          <div><i class="dot" style="background:#f0641b"></i><span>Technology<small>6% · 4 loans</small></span></div>
+          <div><i class="dot" style="background:#30241e"></i><span>Self-Help<small>3% · 2 loans</small></span></div>
+          <div><i class="dot" style="background:#f3a36d"></i><span>Biography<small>2% · 1 loans</small></span></div>
+        </div>
+      </article>
+      <article class="panel top-borrowed-panel">
+        <h2>Top borrowed</h2>
+        <ol class="top-list" id="topBorrowed">
+          <li><span class="rank">1</span><img src="https://covers.openlibrary.org/b/isbn/9780441172719-S.jpg" alt=""><span class="book-info"><strong>Dune</strong><small>Frank Herbert</small></span><b>7</b></li>
+          <li><span class="rank">2</span><img src="https://covers.openlibrary.org/b/isbn/9780061122415-S.jpg" alt=""><span class="book-info"><strong>The Alchemist</strong><small>Paulo Coelho</small></span><b>6</b></li>
+          <li><span class="rank">3</span><img src="https://covers.openlibrary.org/b/isbn/9780553386790-S.jpg" alt=""><span class="book-info"><strong>A Game of Thrones</strong><small>George R.R. Martin</small></span><b>5</b></li>
+          <li><span class="rank">4</span><img src="https://covers.openlibrary.org/b/isbn/9780451524935-S.jpg" alt=""><span class="book-info"><strong>1984</strong><small>George Orwell</small></span><b>5</b></li>
+          <li><span class="rank">5</span><img src="https://covers.openlibrary.org/b/isbn/978006.Design-S.jpg" alt=""><span class="book-info"><strong>The Design of Everyday Things</strong><small>Don Norman</small></span><b>4</b></li>
+        </ol>
+      </article>
+    </section>
+
+    <section class="panel activity-panel">
+      <div class="panel-heading"><h2>Library activity</h2><button class="text-link" id="seeAllActivity">See all</button></div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Book</th><th>Member</th><th>Borrowed → Due</th><th>Returned</th><th>Status</th></tr></thead>
+          <tbody id="activityBody">
+            <tr><td><span class="table-book"><img src="https://covers.openlibrary.org/b/isbn/9780141439518-S.jpg" alt=""> <span><strong>Pride and Prejudice</strong><small>Classics</small></span></span></td><td><span class="member-cell"><i>NV</i>Nikhil Verma</span></td><td>17 Nov → 1 Dec</td><td>—</td><td><span class="status status-loan">On loan</span></td></tr>
+            <tr><td><span class="table-book"><img src="https://covers.openlibrary.org/b/isbn/9780060554736-S.jpg" alt=""> <span><strong>Project Hail Mary</strong><small>Sci-Fi</small></span></span></td><td><span class="member-cell"><i>LV</i>Leo Varghese</span></td><td>16 Nov → 30 Nov</td><td>—</td><td><span class="status status-loan">On loan</span></td></tr>
+            <tr><td><span class="table-book"><img src="https://covers.openlibrary.org/b/isbn/9780439064873-S.jpg" alt=""> <span><strong>Harry Potter and the Half-Blood Prince</strong><small>Fantasy</small></span></span></td><td><span class="member-cell"><i>PN</i>Priya Nair</span></td><td>15 Nov → 29 Nov</td><td>—</td><td><span class="status status-loan">On loan</span></td></tr>
+            <tr><td><span class="table-book"><img src="https://covers.openlibrary.org/b/isbn/9780553380163-S.jpg" alt=""> <span><strong>Sapiens</strong><small>Non-Fiction</small></span></span></td><td><span class="member-cell"><i>SK</i>Sneha Kapoor</span></td><td>26 Oct → 9 Nov</td><td>14 Nov</td><td><span class="status status-returned">Returned</span></td></tr>
+            <tr><td><span class="table-book"><img src="https://covers.openlibrary.org/b/isbn/9780743273565-S.jpg" alt=""> <span><strong>The Great Gatsby</strong><small>Classics</small></span></span></td><td><span class="member-cell"><i>KR</i>Karthik Rao</span></td><td>14 Nov → 28 Nov</td><td>—</td><td><span class="status status-loan">On loan</span></td></tr>
+            <tr><td><span class="table-book"><img src="https://covers.openlibrary.org/b/isbn/9780735211292-S.jpg" alt=""> <span><strong>Atomic Habits</strong><small>Self-Help</small></span></span></td><td><span class="member-cell"><i>AR</i>Ananya Reddy</span></td><td>13 Nov → 27 Nov</td><td>—</td><td><span class="status status-loan">On loan</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <div class="modal-backdrop" id="issueModal" hidden>
+    <section class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <div class="modal-heading"><h2 id="modalTitle">Issue a book</h2><button class="icon-button" id="closeIssue" aria-label="Close">×</button></div>
+      <p class="modal-subtitle">Check out a book to a registered member.</p>
+      <form id="issueForm">
+        <label>Book<select id="issueBook" required></select></label>
+        <label>Member<select id="issueMember" required></select></label>
+        <div class="modal-actions"><button type="button" class="btn btn-light" id="cancelIssue">Cancel</button><button type="submit" class="btn btn-dark">Confirm issue</button></div>
+      </form>
+    </section>
+  </div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="app.js"></script>
+</body>
+</html>
