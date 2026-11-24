@@ -99,3 +99,15 @@ td{height:53px;font-size:11px}
 .settings-card{padding:24px 26px;margin-bottom:22px;max-width:900px}.settings-card h2{font:600 21px var(--serif);margin:0}.settings-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:26px 22px;margin-top:26px}.settings-grid.three{grid-template-columns:repeat(3,minmax(0,1fr))}.settings-grid label{display:grid;gap:8px;font-size:13px;color:#705f53}.settings-grid input{height:44px;border:1px solid var(--line);border-radius:12px;background:#fffdf9;padding:0 13px;font-size:15px;color:var(--ink);box-shadow:0 2px 3px #0000000c}.settings-actions{max-width:900px;display:flex;justify-content:space-between;align-items:center;padding:0 4px;margin-bottom:30px}.settings-actions .btn{min-width:125px}
 @media(max-width:900px){.member-toolbar,.catalogue-toolbar,.circulation-toolbar{align-items:flex-start;flex-direction:column}.member-stats{grid-template-columns:1fr 1fr}.circulation-actions{width:100%}.circulation-actions input{flex:1}}
 @media(max-width:700px){.section-heading h1{font-size:30px}.member-stats{grid-template-columns:1fr}.settings-grid,.settings-grid.three{grid-template-columns:1fr}.member-panel,.catalogue-panel,.circulation-panel{padding:14px}.filter-count{width:100%;margin:0}.books-grid{grid-template-columns:1fr}.catalogue-controls{width:100%}.catalogue-search{min-width:100%}.settings-actions{gap:10px;flex-wrap:wrap}}
+
+
+
+/* Global sans-serif typography */
+:root {
+    --serif: "DM Sans", Arial, sans-serif;
+    --sans: "DM Sans", Arial, sans-serif;
+}
+
+* {
+    font-family: "DM Sans", Arial, sans-serif !important;
+}
