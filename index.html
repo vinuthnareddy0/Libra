@@ -10,41 +10,28 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  
-<aside class="sidebar">
-  <a class="brand" href="#" aria-label="Libra home">
-    <span class="brand-mark">Ⅲ</span>
-    <span>Libra</span>
-  </a>
-
-  <nav class="nav" aria-label="Main navigation">
-    <a class="nav-link active" href="#dashboard">Dashboard</a>
-    <a class="nav-link" href="books.html">Books</a>
-    <a class="nav-link" href="members.html">Members</a>
-    <a class="nav-link" href="circulation.html">Circulation</a>
-    <a class="nav-link" href="settings.html">Settings</a>
-  </nav>
-
-  <div class="sidebar-bottom">
-    <section class="lending-card">
-      <h2>Lending desk</h2>
-      <p>Check a book out to a member in seconds.</p>
-      <button class="btn btn-orange btn-wide" id="openIssue">
-        <span>＋</span> Issue a book
+  <aside class="sidebar">
+    <a class="brand" href="#" aria-label="Libra home"><span class="brand-mark">Ⅲ</span><span>Libra</span></a>
+    <nav class="nav" aria-label="Main navigation">
+      <a class="nav-link active" href="#dashboard"><span class="nav-icon">▦</span>Dashboard</a>
+      <a class="nav-link" href="books.html"><span class="nav-icon">▤</span>Books</a>
+      <a class="nav-link" href="members.html"><span class="nav-icon">♧</span>Members</a>
+      <a class="nav-link" href="circulation.html"><span class="nav-icon">⇄</span>Circulation</a>
+      <a class="nav-link" href="settings.html"><span class="nav-icon">⚙</span>Settings</a>
+    </nav>
+    <div class="sidebar-bottom">
+      <section class="lending-card">
+        <h2>Lending desk</h2>
+        <p>Check a book out to a member in seconds.</p>
+        <button class="btn btn-orange btn-wide" id="openIssue"><span>＋</span> Issue a book</button>
+      </section>
+      <button class="profile" id="profileButton" aria-label="Librarian profile">
+        <span class="avatar avatar-dark">VK</span>
+        <span class="profile-copy"><strong>Vinuthna Kotha</strong><small>Librarian</small></span>
+        <span class="chevrons">⌃<br>⌄</span>
       </button>
-    </section>
-
-    <button class="profile" id="profileButton" aria-label="Librarian profile">
-      <span class="avatar avatar-dark">VK</span>
-      <span class="profile-copy">
-        <strong>Vinuthna Kotha</strong>
-        <small>Librarian</small>
-      </span>
-      <span class="chevrons">⌃<br>⌄</span>
-    </button>
-  </div>
-</aside>
-
+    </div>
+  </aside>
 
   <main class="main" id="dashboard">
     <header class="topbar">
