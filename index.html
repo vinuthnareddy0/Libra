@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>LIBRA — Librarian Dashboard</title>
+  <title>LIBRA</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
@@ -45,7 +45,7 @@
     <section class="top-grid">
       <article class="welcome panel">
         <p class="date-line" id="todayLabel">Wednesday, 18 November</p>
-        <h1>Good evening,<br>Vinuthna</h1>
+        <h1>Good evening, V</h1>
         <p class="welcome-copy" id="welcomeCopy">Nothing is due back today, and 6 are overdue. Time for a few gentle reminders.</p>
         <div class="welcome-actions">
           <button class="btn btn-dark" id="heroIssue">＋ &nbsp;Issue a book</button>
@@ -53,15 +53,23 @@
         </div>
       </article>
       <article class="featured panel">
-        <img class="featured-cover" src="https://covers.openlibrary.org/b/isbn/9780441172719-M.jpg" alt="Dune book cover" onerror="this.src='https://covers.openlibrary.org/b/title/Dune-M.jpg'">
-        <div class="featured-copy">
-          <span class="tag">Most borrowed</span>
-          <h2>Dune</h2>
-          <p class="muted">Frank Herbert</p>
-          <p class="description">On the desert planet Arrakis, young Paul Atreides becomes entangled in a struggle over the most valuable substance in the...</p>
-          <p class="loan-count"><strong>7</strong> loans all time</p>
-        </div>
-      </article>
+  <img
+    class="featured-cover"
+    src="https://covers.openlibrary.org/b/isbn/9781612620244-M.jpg"
+    alt="Attack on Titan Volume 1 book cover"
+    onerror="this.style.visibility='hidden'"
+  >
+  <div class="featured-copy">
+    <span class="tag">Most borrowed</span>
+    <h2>Attack on Titan, Vol. 1</h2>
+    <p class="muted">Hajime Isayama</p>
+    <p class="description">
+      Humanity lives behind enormous walls to protect itself from the Titans.
+      When a colossal Titan breaches the wall, Eren Yeager's world changes forever.
+    </p>
+    <p class="loan-count"><strong>7</strong> loans all time</p>
+  </div>
+</article>
     </section>
 
     <section class="stats-grid" aria-label="Library summary">
