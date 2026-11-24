@@ -3,7 +3,7 @@
 (() => {
   "use strict";
 
-  const API = "http://127.0.0.1:8000/api";
+  const API = "https://libra-backend-m58p.onrender.com/api";
 
   const $ = (s, root = document) => root.querySelector(s);
   const $$ = (s, root = document) => [...root.querySelectorAll(s)];
